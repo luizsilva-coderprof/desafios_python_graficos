@@ -14,7 +14,7 @@ mulheres = df_prouni_2020[
 plt.figure(figsize=(8,5))
 
 plt.boxplot([homens.dropna(), mulheres.dropna()],
-            labels=['Homens', 'Mulheres'])
+            tick_labels=['Homens', 'Mulheres'])
 
 plt.title('Idade dos bolsistas por sexo - 2020')
 plt.ylabel('Idade')
