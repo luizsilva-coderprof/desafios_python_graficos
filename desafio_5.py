@@ -8,20 +8,14 @@ df_prouni_2019['DT_NASCIMENTO_BENEFICIARIO'] = pd.to_datetime(
     errors='coerce'
 )
 
-df_prouni_2019['IDADE'] = (
-    2019 -
-    df_prouni_2019['DT_NASCIMENTO_BENEFICIARIO'].dt.year
-)
+df_prouni_2019['IDADE'] = (2019 - df_prouni_2019['DT_NASCIMENTO_BENEFICIARIO'].dt.year)
 
 df_prouni_2020['DATA_NASCIMENTO'] = pd.to_datetime(
     df_prouni_2020['DATA_NASCIMENTO'],
     errors='coerce'
 )
 
-df_prouni_2020['IDADE'] = (
-    2020 -
-    df_prouni_2020['DATA_NASCIMENTO'].dt.year
-)
+df_prouni_2020['IDADE'] = (2020 -df_prouni_2020['DATA_NASCIMENTO'].dt.year)
 
 plt.figure(figsize=(10,5))
 
