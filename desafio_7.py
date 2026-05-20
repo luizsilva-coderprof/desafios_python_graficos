@@ -8,7 +8,8 @@ deficiencia = df_prouni_2020[
 ].value_counts()
 
 plt.figure(figsize=(6,4))
-deficiencia.plot(kind='bar')
+# deficiencia.plot(kind='bar')
+plt.bar(deficiencia.index, deficiencia.values)
 
 plt.title('Beneficiários com deficiência física')
 plt.xlabel('Possui deficiência?')

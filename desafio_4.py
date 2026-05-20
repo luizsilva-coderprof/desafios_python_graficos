@@ -3,6 +3,14 @@
 
 import matplotlib.pyplot as plt
 
+df_prouni_2020['DATA_NASCIMENTO'] = pd.to_datetime(
+    df_prouni_2020['DATA_NASCIMENTO'],
+    dayfirst=True,
+    errors='coerce'
+)
+
+df_prouni_2020['IDADE'] = 2020 - df_prouni_2020['DATA_NASCIMENTO'].dt.year
+
 homens = df_prouni_2020[
     df_prouni_2020['SEXO_BENEFICIARIO'] == 'M'
 ]['IDADE']

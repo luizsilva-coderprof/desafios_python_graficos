@@ -8,27 +8,41 @@ df_prouni_2019['DT_NASCIMENTO_BENEFICIARIO'] = pd.to_datetime(
     errors='coerce'
 )
 
-df_prouni_2019['IDADE'] = 2019 - df_prouni_2019['DT_NASCIMENTO_BENEFICIARIO'].dt.year
+df_prouni_2019['IDADE'] = (
+    2019 -
+    df_prouni_2019['DT_NASCIMENTO_BENEFICIARIO'].dt.year
+)
+
+df_prouni_2020['DATA_NASCIMENTO'] = pd.to_datetime(
+    df_prouni_2020['DATA_NASCIMENTO'],
+    errors='coerce'
+)
+
+df_prouni_2020['IDADE'] = (
+    2020 -
+    df_prouni_2020['DATA_NASCIMENTO'].dt.year
+)
 
 plt.figure(figsize=(10,5))
 
-plt.hist(df_prouni_2019['IDADE'].dropna(),
-         bins=20,
-         alpha=0.5,
-         label='2019',
-         color='blue'
-         )
+plt.hist(
+    df_prouni_2019['IDADE'].dropna(),
+    bins=20,
+    alpha=0.5,
+    label='2019',
+    color='blue'
+)
 
-plt.hist(df_prouni_2020['IDADE'].dropna(),
-         bins=20,
-         alpha=0.5,
-         label='2020',
-         color='red'
-         )
+plt.hist(
+    df_prouni_2020['IDADE'].dropna(),
+    bins=20,
+    alpha=0.5,
+    label='2020',
+    color='red'
+)
 
 plt.title('Distribuição de idade: 2019 x 2020')
 plt.xlabel('Idade')
 plt.ylabel('Quantidade')
-
 plt.legend()
 plt.show()
