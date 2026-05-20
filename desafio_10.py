@@ -16,7 +16,7 @@ for raca in racas:
 
 plt.figure(figsize=(10,5))
 
-plt.boxplot(dados, labels=racas)
+plt.boxplot(dados, tick_labels=racas)
 
 plt.title('Idade por raça dos bolsistas')
 plt.ylabel('Idade')
