@@ -10,8 +10,8 @@ df_plot['DATA_NASCIMENTO'] = pd.to_datetime(
     dayfirst=True,
     errors='coerce'
 )
-
 df_plot['IDADE'] = 2020 - df_plot['DATA_NASCIMENTO'].dt.year
+
 
 df_plot['MOD_NUM'] = (
     df_plot['MODALIDADE_ENSINO_BOLSA']
@@ -20,6 +20,7 @@ df_plot['MOD_NUM'] = (
         'PRESENCIAL': 1
     })
 )
+
 
 plt.figure(figsize=(8,5))
 
